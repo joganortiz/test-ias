@@ -6,14 +6,12 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configEnv = new ConfigService();
-  
-  app.useGlobalPipes(
-    new ValidationPipe({}),
-  );
 
-  app.setGlobalPrefix("/api/v1");
+  app.useGlobalPipes(new ValidationPipe({}));
 
-  await app.listen(configEnv.get("PORT"), async () => {
+  app.setGlobalPrefix('/api/v1');
+
+  await app.listen(configEnv.get('PORT'), async () => {
     console.log(`Application is running on: ${await app.getUrl()}`);
   });
 }

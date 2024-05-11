@@ -1,8 +1,8 @@
-import { dificualtadType } from "../../infrastructura/sql/recipes.entity";
+import { difficultyType } from '../../infrastructura/sql/recipes.entity';
 
 export class RecipeDificultad {
-    public readonly value: dificualtadType
-    constructor(value: dificualtadType) {
-        this.value = value;
-    }
+  public readonly value: difficultyType;
+  constructor(value: difficultyType) {
+    this.value = value;
+  }
 }
